@@ -2,9 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Talk</title>
+  <title>My talk</title>
+  <style>
+    section {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .66s;
+      text-align: center;
+    }
+
+    section:focus {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
 </head>
 <body>
-  Hello, World!
+  <section>
+    <h1>The Title</h1>
+    <h2>Just a Subtitle.</h2>
+  </section>
+
+  <section>
+    <h1>One slide</h1>
+    <h2>Just a Subtitle.</h2>
+  </section>
+
+  <section>
+    <h1>Another slide</h1>
+    <h2>Just a Subtitle.</h2>
+  </section>
+
+  <section>
+    <h1>Last slide</h1>
+    <h2>Just a Subtitle.</h2>
+  </section>
+
+  <script>
+    document.querySelectorAll('body > section').forEach(el => {
+      el.tabIndex = -1
+    })
+
+    const first = document.querySelector('section:first-of-type')
+    const last = document.querySelector('section:last-of-type')
+
+    first.style.visibility = 'visible'
+    first.focus()
+
+    document.addEventListener('keyup', e => {
+      const focused = document.querySelector('section:focus')
+
+      switch (e.key) {
+        case 'ArrowUp':
+        case 'ArrowLeft':
+          // back / previous
+          const prev = focused.previousElementSibling
+
+          focused.style.visibility = 'hidden'
+
+          if (prev) {
+            prev.style.visibility = 'visible'
+            prev.focus()
+          } else {
+            last.style.visibility = 'visible'
+            last.focus()
+          }
+          break
+
+        case 'ArrowDown':
+        case 'ArrowRight':
+          // forward / next
+          const next = focused.nextElementSibling
+
+          focused.style.visibility = 'hidden'
+
+          if (next && next.tagName == 'SECTION') {
+            next.style.visibility = 'visible'
+            next.focus()
+          } else {
+            first.style.visibility = 'visible'
+            first.focus()
+          }
+      }
+    })
+  </script>
 </body>
 </html>
