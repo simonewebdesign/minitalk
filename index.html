@@ -15,7 +15,7 @@
       transition: opacity .66s;
     }
 
-    section:focus {
+    section.focused {
       opacity: 1;
       visibility: visible;
     }
@@ -49,7 +49,7 @@
     show(first)
 
     document.addEventListener('keyup', e => {
-      const focused = document.querySelector('section:focus')
+      const focused = document.querySelector('.focused')
 
       switch (e.key) {
         case 'ArrowUp':
@@ -68,13 +68,11 @@
     })
 
     function show(el) {
-      el.style.visibility = 'visible'
-      el.style.opacity = 1
+      el.classList.add('focused')
     }
 
     function hide(el) {
-      el.style.visibility = 'hidden'
-      el.style.opacity = 0
+      el.classList.remove('focused')
     }
   </script>
 </body>
