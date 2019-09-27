@@ -13,7 +13,6 @@
       opacity: 0;
       visibility: hidden;
       transition: opacity .66s;
-      text-align: center;
     }
 
     section:focus {
@@ -59,8 +58,7 @@
 
       switch (e.key) {
         case 'ArrowUp':
-        case 'ArrowLeft':
-          // back / previous
+        case 'ArrowLeft': // back / previous
           const prev = focused.previousElementSibling
 
           focused.style.visibility = 'hidden'
@@ -75,8 +73,7 @@
           break
 
         case 'ArrowDown':
-        case 'ArrowRight':
-          // forward / next
+        case 'ArrowRight': // forward / next
           const next = focused.nextElementSibling
 
           focused.style.visibility = 'hidden'
