@@ -4,23 +4,23 @@
 
 Tired of bloated software such as Powerpoint and Keynote?
 Wish it was as simple as writing some HTML and CSS?
-Try minitalk!
+Then minitalk is for you!
 
 ## Installation & Usage
 
-Just grab that `index.html` file and start hacking away. How can it be any simpler?
+Just grab that `index.html` file and start hacking away.
+
+How can it be any simpler?
 
 ## Features
 
-- Just one file, which makes it really easy to manage
+- Just 80 lines of HTML you can start customizing right away
 - Any HTML or CSS feature will work right out of the box
-- Any media (`<svg>`, `<video>`, etc.) will also work
-- Adding a slide is as simple as adding a `<section></section>`
-- No batteries included
+- Adding a slide is as simple as adding a `<section>`
 
 ## Requirements
 
-- A web browser.
+- A web browser
 - Knowledge of HTML and CSS might be necessary, depending on what you'd like to achieve.
 
 ## Contributing
