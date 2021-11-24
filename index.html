@@ -15,29 +15,37 @@
       transition: opacity .66s;
     }
 
-    section.focused {
+    .focused {
       opacity: 1;
       visibility: visible;
+    }
+
+    .centered {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
     }
   </style>
 </head>
 <body>
-  <section>
+  <section class="centered">
     <h1>The Title</h1>
     <h2>Just a Subtitle.</h2>
   </section>
 
-  <section>
+  <section class="centered">
     <h1>One slide</h1>
     <h2>Just a Subtitle.</h2>
   </section>
 
   <section>
-    <h1>Another slide</h1>
+    <h1>Another slide (not centered)</h1>
     <h2>Just a Subtitle.</h2>
   </section>
 
-  <section>
+  <section class="centered">
     <h1>Last slide</h1>
     <h2>Just a Subtitle.</h2>
   </section>
